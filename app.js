@@ -1,9 +1,10 @@
-const testFolder = './';
+const testFolder = './input/';
 const fs = require('fs');
 const { once } = require('events');
 const { createReadStream } = require('fs');
 const { createInterface } = require('readline');
 const helper = require('./helper')
+const path = require('path')
 // usage:
 let promsifiedReadDir = helper.promisify(fs.readdir);
 const timeTable = helper.getBlankTimeTable()
@@ -11,7 +12,7 @@ const classes = ['6th', '7th', '8th', '9th', '10th']
 const subjects = ['Maths', 'English', 'Science', 'Kannada', 'Hindi']
 async function getTimeTable(file) {
   const rl = createInterface({
-    input: createReadStream(file)
+    input: createReadStream(path.resolve(testFolder + file))
   });
   const lang = file.substring(31, file.length - 4)
   for await (const line of rl) {

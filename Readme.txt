@@ -16,6 +16,7 @@ Important points:
 
 How to run the code
 ----------------------
+I have placed all input csv files inside input folder and reading it from there
 Things that I didn't cover:
 1. Writing test cases for the code.
 2. Code cleanup and code modularize
